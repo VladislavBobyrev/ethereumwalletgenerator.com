@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ethereumwalletgenerator.com Генератор Ethereum-кошельков</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ethereumwalletgenerator.com </h1>
+        <h2>Генератор Ethereum-кошельков</h2>
+
+        <input type="password" id="password" placeholder="Введите пароль"  autofocus>
+        <button id="generate">Создать кошельки</button>
+
+        <table id="walletsTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Адрес</th>
+                    <th>Публичный ключ</th>
+                    <th>Приватный ключ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Сюда будут добавляться кошельки -->
+            </tbody>
+        </table>
+
+        <div id="toast" class="toast">Скопировано!</div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
