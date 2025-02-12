@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #1E3A8A;
     color: #ccc;
@@ -48,7 +48,124 @@ th, td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
+} */
+@import url("reset.css");
+
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    height: 100svh;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background: radial-gradient(30vw, rgb(236 9 121 / 15%), rgb(10 11 11)), #080808;
+    
+    color: #ccc;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+}
+
+.header, 
+.footer {
+    padding: 20px;
+    font-size: 1rem;
+    color: rgb(156 163 175);
+    background-color: #000000d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    border-bottom: 1px solid rgb(31 41 55 / 0.5);
+}
+
+.container {
+    width: 80%;
+    padding-top: 70px;
+    margin: 0 auto; 
+}
+
+.password_form {
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    gap: 10px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgb(31 41 55 / 0.5);
+}
+
+.password {
+    width: 100%;
+    padding: 7px;
+    color: rgb(191, 200, 214);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #998686;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 300px;
+    padding: 5px;
+    background-image: linear-gradient(to right, #ec4899, #3b82f6);
+    color: rgb(191, 200, 214);
+    border-radius: 5px;
+    border: none;
+}
+
+.table {
+    width: 100%;
+    color: rgb(191, 200, 214);
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border-collapse: collapse;
+    border: 1px solid rgb(31 41 55 / 0.5);
+}
+
+.table thead {
+    font-weight: bold;
+    text-align: left;
+}
+
+.table th, td, tr{
+    padding: 1rem 1rem 1rem 2rem;
+    border-bottom: 1px solid rgb(31 41 55 / 0.5);
+}
+
+tr:hover td{
+    background-color: #000;
+    cursor: pointer;
+}
+
+.footer {
+    border-top: 1px solid rgb(31 41 55 / 0.5);
+}
+
+
+.header_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3b82f6;
+    background-image: linear-gradient(to right, #ec4899, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.github {
+    text-decoration: none;
+    color: rgb(156 163 175);
+}
+
 
 .hidden {
     display: none;
@@ -83,4 +200,13 @@ th, td {
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+@media (max-width: 768px) {
+    .header_title {
+        font-size: 14px;
+    }
+    .footer {
+        font-size: 10px;
+    }
 }
