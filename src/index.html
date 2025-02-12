@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>ethereumwalletgenerator.com </h1>
-        <h2>Генератор Ethereum-кошельков</h2>
-
-        <input type="password" id="password" placeholder="Введите пароль"  autofocus>
-        <button id="generate">Создать кошельки</button>
-
-        <table id="walletsTable" style="display: none;">
+    <header class="header">
+        <div class="header_title">Ethereum Wallet Generator</div>
+        <a class="github" href="">GitHub</a>
+    </header>
+    <main class="container">
+        <div class="password_form">
+            <input class="password" type="password" id="password" placeholder="Введите пароль"  autofocus>
+            <button class="btn" id="generate">Создать кошельки</button>
+        </div>
+        <table class="table" id="walletsTable" style="display: none;">
             <thead>
                 <tr>
                     <th>Адрес</th>
@@ -28,8 +30,8 @@
         </table>
 
         <div id="toast" class="toast">Скопировано!</div>
-    </div>
-
+    </main>
+    <footer class="footer">&#169; 2025 Ethereum Wallet Generator. All rights reserved.</footer>
     <script type="module" src="main.js"></script>
 </body>
 </html>
