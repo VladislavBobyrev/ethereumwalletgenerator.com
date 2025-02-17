@@ -18,8 +18,13 @@ document.getElementById('generate').addEventListener('click', () => {
         wallets.forEach(wallet => {
             const row = document.createElement('tr');
             const addressCell = document.createElement('td');
-            addressCell.textContent = wallet.address;
-       
+
+            if (window.innerWidth < 768) {
+                addressCell.textContent =  shortenAddress(wallet.address)
+            } else {
+                addressCell.textContent = wallet.address;
+            }
+
             addressCell.addEventListener('click', () => copyToClipboard(wallet.address));
 
             const publicKeyCell = document.createElement('td');
@@ -42,10 +47,9 @@ document.getElementById('generate').addEventListener('click', () => {
         console.error('Ошибка:', error);
     });
 
-  
-
     document.getElementById('walletsTable').style.display = 'table';
 });
+
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
@@ -59,3 +63,7 @@ function showToast(message) {
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3000);
 }
+
+function shortenAddress (address) {
+    return address.slice(0, 7) + "..." + address.slice(-7);
+};
