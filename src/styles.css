@@ -8,12 +8,11 @@
 
 body {
     margin: 0;
+    width: 100vv;
     height: 100svh;
     font-family: Arial, sans-serif;
     font-size: 16px;
-    background: radial-gradient(30vw, rgb(236 9 121 / 15%), rgb(10 11 11)), #080808;
-    
-    color: #ccc;
+    background: radial-gradient(30vw, rgb(117 38 77 / 78%), rgb(33 36 36)), #070707;    color: #ccc;
 
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -31,13 +30,17 @@ body {
     font-size: 1rem;
     color: rgb(156 163 175);
     background-color: #000000d9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100vw;
 }
 
 .header {
     border-bottom: 1px solid rgb(31 41 55 / 0.5);
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container {
@@ -50,6 +53,7 @@ body {
 .password_form {
     width: 100%;
     padding: 20px;
+    margin-bottom: 30px;
 
     display: flex;
     gap: 10px;
@@ -103,10 +107,15 @@ tr:hover td{
     cursor: pointer;
 }
 
+.td-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .footer {
     border-top: 1px solid rgb(31 41 55 / 0.5);
 }
-
 
 .header_title {
     font-size: 24px;
@@ -122,7 +131,6 @@ tr:hover td{
     color: rgb(156 163 175);
 }
 
-
 .hidden {
     display: none;
 }
@@ -130,10 +138,10 @@ tr:hover td{
 .toast {
     visibility: hidden;
     min-width: 250px;
-    height: 20px;
-    background-color: #00B4D8;
+    height: 50px;
     color: #fff;
     text-align: center;
+    background-image: linear-gradient(to right, #ec4899, #3b82f6);
     border-radius: 5px;
     padding: 16px;
     position: fixed;
@@ -174,30 +182,37 @@ tr:hover td{
     }
     .container {
         width: 100%;
-        margin: 0 12px;
+        padding: 0 12px;
     }
     .password_form {
+        margin-bottom: 20px;
+        padding: 0 0 10px 0;
         display: flex;
         flex-direction: column;
-        padding: 0 0 10px 0;
+        background-color: transparent;
     }
     .btn {
         width: 100%;
-        font-size: 18px;
+        font-size: 15px;
         text-transform: uppercase;
     }
     .table {
-        font-size: 10px;
+        font-size: 12px;
     }
-    .table th, tr, td {
+    .table tr, td {
         padding: 3px;
+    }
+    .table thead {
+        text-align: center;
+    }
+    .table th{
+        padding: 7px;
+    }
+    .td-wrapper{
+        justify-content: center;   
     }
     .footer {
         font-size: 10px;
     }
 }
-@media (max-width: 425px) {
-    .table {    
-        font-size: 8px;
-}
-}
+
