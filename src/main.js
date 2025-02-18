@@ -28,12 +28,12 @@ document.getElementById('generate').addEventListener('click', () => {
             addressCell.addEventListener('click', () => copyToClipboard(wallet.address));
 
             const publicKeyCell = document.createElement('td');
-            publicKeyCell.textContent = 'Нажмите, чтобы скоаировать';
+            publicKeyCell.innerHTML = '<div class="td-wrapper"><svg viewBox="0 0 24 24" width="24" height="24"><use href="#icon-copy"></use></svg> <div class="mobile-hidden">Копировать</div></div>';
 
-            publicKeyCell.addEventListener('click', () => copyToClipboard(wallet.address));
+            publicKeyCell.addEventListener('click', () => copyToClipboard(wallet.signingKey.publicKey));
 
             const privateKeyCell = document.createElement('td');
-            privateKeyCell.textContent = 'Нажмите, чтобы скоаировать';
+            privateKeyCell.innerHTML = '<div class="td-wrapper"><svg viewBox="0 0 24 24" width="24" height="24"><use href="#icon-copy"></use></svg> <div class="mobile-hidden">Копировать</div></div>';
     
             privateKeyCell.addEventListener('click', () => copyToClipboard(wallet.privateKey));
 
@@ -63,6 +63,10 @@ function showToast(message) {
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3000);
 }
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+});
 
 function shortenAddress (address) {
     return address.slice(0, 7) + "..." + address.slice(-7);
