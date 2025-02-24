@@ -43,6 +43,20 @@ body {
     align-items: center;
 }
 
+.header__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3b82f6;
+    background-image: linear-gradient(to right, #ec4899, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header__link {
+    text-decoration: none;
+    color: rgb(156 163 175);
+}
+
 .container {
     width: 80%;
     max-width: 1000px;
@@ -50,7 +64,7 @@ body {
     margin: 0 auto; 
 }
 
-.password_form {
+.password-form {
     width: 100%;
     padding: 20px;
     margin-bottom: 30px;
@@ -63,7 +77,7 @@ body {
     border: 1px solid rgb(31 41 55 / 0.5);
 }
 
-.password {
+.password-form__input {
     width: 100%;
     padding: 7px;
     color: rgb(191, 200, 214);
@@ -72,7 +86,7 @@ body {
     border-radius: 5px;
 }
 
-.btn {
+.password-form__btn {
     width: 300px;
     padding: 5px;
     background-image: linear-gradient(to right, #ec4899, #3b82f6);
@@ -91,18 +105,18 @@ body {
     border: 1px solid rgb(31 41 55 / 0.5);
 }
 
-.table thead {
+.table .table__thead {
     font-weight: bold;
     text-align: left;
 }
 
-.table th, td, tr{
+.table .table__th, .table__td, .table__tr {
     padding: 1rem 1rem 1rem 2rem;
     border-bottom: 1px solid rgb(31 41 55 / 0.5);
     vertical-align: middle;
 }
 
-tr:hover td{
+.table__tr:hover .table__td{
     background-color: #000;
     cursor: pointer;
 }
@@ -115,20 +129,6 @@ tr:hover td{
 
 .footer {
     border-top: 1px solid rgb(31 41 55 / 0.5);
-}
-
-.header_title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #3b82f6;
-    background-image: linear-gradient(to right, #ec4899, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.github {
-    text-decoration: none;
-    color: rgb(156 163 175);
 }
 
 .hidden {
@@ -174,24 +174,24 @@ tr:hover td{
 }
 
 @media (max-width: 768px) {
-    .header_title {
+    .header__logo {
         font-size: 14px;
     }
-    .github {
+    .header__link {
         font-size: 12px;
     }
     .container {
         width: 100%;
         padding: 0 12px;
     }
-    .password_form {
+    .password-form {
         margin-bottom: 20px;
         padding: 0 0 10px 0;
         display: flex;
         flex-direction: column;
         background-color: transparent;
     }
-    .btn {
+    .password-form__btn {
         width: 100%;
         font-size: 15px;
         text-transform: uppercase;
@@ -199,13 +199,13 @@ tr:hover td{
     .table {
         font-size: 12px;
     }
-    .table tr, td {
+    .table .table__tr, .table__td {
         padding: 3px;
     }
-    .table thead {
+    .table .table__thead {
         text-align: center;
     }
-    .table th{
+    .table .table__th {
         padding: 7px;
     }
     .td-wrapper{

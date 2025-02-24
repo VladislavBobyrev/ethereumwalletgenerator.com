@@ -18,6 +18,8 @@ document.getElementById('generate').addEventListener('click', () => {
         wallets.forEach(wallet => {
             const row = document.createElement('tr');
             const addressCell = document.createElement('td');
+            row.classList.add("table__tr")
+            addressCell.classList.add("table__td")
 
             if (window.innerWidth < 768) {
                 addressCell.textContent =  shortenAddress(wallet.address)

@@ -9,22 +9,22 @@
 <body>
     <header class="header">
         <div class="wrapper header__wrapper">
-            <div class="header_title">Ethereum Wallet Generator</div>
-            <a class="github" href="">GitHub</a>
+            <div class="header__logo">Ethereum Wallet Generator</div>
+            <a class="header__link" href="">GitHub</a>
         </div>
-
     </header>
+
     <main class="container wrapper">
-        <form id="myForm" class="password_form">
-            <input class="password" type="password" id="password" placeholder="Введите пароль"  autofocus>
-            <button class="btn" id="generate">Создать кошельки</button>
+        <form id="myForm" class="password-form">
+            <input class="password-form__input" type="password" id="password" placeholder="Введите пароль"  autofocus>
+            <button class="password-form__btn" id="generate">Создать кошельки</button>
         </form>
         <table class="table" id="walletsTable">
-            <thead>
-                <tr>
-                    <th>Адрес</th>
-                    <th>Публичный ключ</th>
-                    <th>Приватный ключ</th>
+            <thead class="table__thead">
+                <tr class="table__tr">
+                    <th class="table__th">Адрес</th>
+                    <th class="table__th">Публичный ключ</th>
+                    <th class="table__th">Приватный ключ</th>
                 </tr>
             </thead>
             <tbody>
