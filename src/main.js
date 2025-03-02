@@ -1,5 +1,4 @@
 import { generateWallets } from './utils.js';
-import './styles.css';
 
 document.getElementById('generate').addEventListener('click', () => {
     const password = document.getElementById('password').value;
