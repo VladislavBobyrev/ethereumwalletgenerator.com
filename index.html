@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ethereumwalletgenerator.com Генератор Ethereum-кошельков</title>
+    
+  <script type="module" crossorigin src="./assets/index-ab1a51e0.js"></script>
+  <link rel="stylesheet" href="./assets/index-bf9e731b.css">
+</head>
+<body class="page">
+    <header class="header page__header">
+        <div class="wrapper header__wrapper">
+            <div class="header__logo">Ethereum Wallet Generator</div>
+            <a class="header__link" href="https://github.com/VladislavBobyrev/ethereumwalletgenerator.com" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <main class="main wrapper page__main">
+        <form id="myForm" class="password-form">
+            <input class="password-form__input" type="password" id="password" placeholder="Введите пароль"  autofocus>
+            <button class="password-form__btn" id="generate">Создать кошельки</button>
+        </form>
+        <div class="main__table">
+            <table class="table" id="walletsTable">
+                <thead class="table__thead">
+                    <tr class="table__tr">
+                        <th class="table__th">Адрес</th>
+                        <th class="table__th">Публичный ключ</th>
+                        <th class="table__th">Приватный ключ</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="toast" class="toast">Скопировано!</div>
+    </main>
+    <footer class="footer page__footer">
+        <div class="footer__wrapper wrapper"></div></footer>
+    <div class="hidden">
+        <svg id="icon-copy" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"><path d="M13.9 23.4H6.1a16 16 0 0 1-2.3 0 1 1 0 0 1-.7-.9V5.1a1 1 0 0 1 .8-.7h4.7l2.4.1L12.5 6l2.8 2.8 1.5 1.5v.4a.4.4 0 0 1 0 .3v11.7a1 1 0 0 1-.7.7h-2.2zm-9.6-.8h9.6a94.4 94.4 0 0 0 2.2-.2V11.2h-3.7c-1.3 0-2.4-1-2.4-2.4V5.2H4v17.3h.3zm6.5-17.1v3.3c0 1 .8 1.6 1.6 1.6h3.4l-1.1-1L12 6.5l-1.2-1.1z" fill="currentColor" /><path d="M19.2 19.6h-.6a.4.4 0 0 1 0-.8H20V7.4h-3.6C15.1 7.5 14 6.4 14 5V1.4h-3.9a115 115 0 0 0-2.2.2V2.9a.4.4 0 1 1-.8 0V1.3l.3-.4.5-.3h4.7l2.4.1 1.5 1.6L19.3 5l1.6 1.7V7a.4.4 0 0 1 0 .2v11.7a1 1 0 0 1-.8.7h-.9zM14.8 1.7v3.4c0 .9.8 1.6 1.6 1.6h3.4a62 62 0 0 0-1.1-1.2L16 2.8l-1.2-1.1z" fill="currentColor"/></svg>
+    </div>
+    
+</body>
+</html>
