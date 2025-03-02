@@ -123,7 +123,6 @@ body {
     padding: 1rem 1rem 1rem 2rem;
     border-bottom: 1px solid rgb(31 41 55 / 0.5);
     vertical-align: middle;
-    text-transform: uppercase;
 }
 
 .table__tr:hover .table__td {
@@ -219,6 +218,7 @@ body {
     }
     .table .table__thead {
         text-align: center;
+        text-transform: uppercase;
     }
     .table .table__th {
         padding: 7px;
