@@ -8,7 +8,6 @@ document.getElementById('generate').addEventListener('click', () => {
         return;
     }
 
-
     generateWallets(password)
     .then(wallets => {
         
@@ -67,6 +66,11 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault();
 });
 
-function shortenAddress (address) {
-    return address.slice(0, 7) + "..." + address.slice(-7);
-};
+document.addEventListener("DOMContentLoaded", () => {
+    const footer = document.querySelector(".footer__wrapper");
+    if (footer) {
+        footer.textContent = ''
+        const currentYear = new Date().getFullYear();
+        footer.innerHTML = `&#169; ${currentYear} Ethereum Wallet Generator. All rights reserved.`;
+    }
+});
