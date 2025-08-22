@@ -10,6 +10,8 @@
   "dependencies": {
     "crypto": "^1.0.1",
     "ethers": "^6.13.5",
+    "ripple-keypairs": "^2.0.0",
+    "tronweb": "^6.0.4",
     "vite": "^4.0.0"
   },
   "devDependencies": {

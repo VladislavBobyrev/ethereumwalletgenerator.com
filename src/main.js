@@ -1,14 +1,23 @@
 import { generateWallets } from './utils.js';
+import { generateTRXWallets } from './trx-generate.js';
+import { generateXRPWallets } from './xrp-generate.js';
+import {
+    generateXChainWallets,
+    generatePChainWallets,
+    generateCChainWallets,
+} from './avax-generate.js';
+import { generateIOTAWallets } from './iota-generate.js';
+
 import './styles.css';
 
-document.getElementById('generate').addEventListener('click', () => {
+document.getElementById('generate').addEventListener('click', (e) => {
     const password = document.getElementById('password').value;
     if (!password) {
         alert('Введите пароль!');
         return;
     }
 
-    generateWallets(password)
+    generateIOTAWallets(password)
     .then(wallets => {
         
         const tableBody = document.querySelector('#walletsTable tbody');
@@ -47,7 +56,6 @@ document.getElementById('generate').addEventListener('click', () => {
 
     document.getElementById('walletsTable').style.display = 'table';
 });
-
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
