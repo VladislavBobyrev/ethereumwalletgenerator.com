@@ -1,23 +1,102 @@
-import { generateWallets } from './utils.js';
-import { generateTRXWallets } from './trx-generate.js';
-import { generateXRPWallets } from './xrp-generate.js';
 import {
     generateXChainWallets,
     generatePChainWallets,
     generateCChainWallets,
 } from './avax-generate.js';
+import { generateTRXWallets } from './trx-generate.js';
+import { generateXRPWallets } from './xrp-generate.js';
 import { generateIOTAWallets } from './iota-generate.js';
+import { generateWallets } from './utils.js';
 
 import './styles.css';
 
-document.getElementById('generate').addEventListener('click', (e) => {
+const Tabs = [
+    {
+        id: 111,
+        name: 'EVM',
+        funcGenerate: generateWallets
+    },
+    {
+        id: 112,
+        name: 'TRX',
+        funcGenerate: generateTRXWallets
+    },
+    {
+        id: 113,
+        name: 'XRP',
+        funcGenerate: generateXRPWallets
+    },
+    {
+        id: 114,
+        name: 'AVAX C-Chain',
+        funcGenerate: generateCChainWallets
+    },
+    {
+        id: 115,
+        name: 'AVAX P-Chain',
+        funcGenerate: generatePChainWallets
+    },
+    {
+        id: 116,
+        name: 'AVAX X-Chain',
+        funcGenerate: generateXChainWallets
+    },
+    {
+        id: 117,
+        name: 'IOTA EVM',
+        funcGenerate: generateIOTAWallets
+    }
+]
+
+const init = () => {
+    const tabsSection = document.querySelector('#tabs')
+
+    Tabs.forEach((item) => {
+        const button = document.createElement('button')
+
+        button.innerHTML = item.name
+        button.dataset.tab = item.id
+
+        button.classList.add('tab-button')
+
+        if(item.id === 111) {
+            button.classList.add('tab-active')
+        }
+
+
+        tabsSection.appendChild(button)
+    })
+
+    const tabsButtons = document.querySelectorAll('.tab-button')
+
+    tabsButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            const target = event.target
+            const tabId = target.dataset.tab 
+            const password = document.getElementById('password').value;
+
+            tabsButtons.forEach((button) => {
+                button.classList.remove('tab-active')
+            })
+
+            target.classList.add('tab-active')
+            if(password) {
+                document.getElementById('generate').click()
+            }
+        })
+    })
+}
+
+init()
+
+const renderTable = (generateWallets) => {
     const password = document.getElementById('password').value;
     if (!password) {
         alert('Введите пароль!');
         return;
     }
 
-    generateIOTAWallets(password)
+    generateWallets(password)
     .then(wallets => {
         
         const tableBody = document.querySelector('#walletsTable tbody');
@@ -55,6 +134,13 @@ document.getElementById('generate').addEventListener('click', (e) => {
     });
 
     document.getElementById('walletsTable').style.display = 'table';
+}
+
+document.getElementById('generate').addEventListener('click', () => {
+    const activeTabID = document.querySelector('.tab-active').dataset.tab
+    const activeTab = Tabs.find(item => item.id === parseInt(activeTabID))
+
+    renderTable(activeTab.funcGenerate);
 });
 
 function copyToClipboard(text) {

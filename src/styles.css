@@ -177,6 +177,25 @@ body {
     }
 }
 
+.tabs-group {
+    width: 100%;
+    display: flex;
+}
+
+.tab-button {
+    width: 100%;
+    padding: 0.31rem;
+    background: #3b82f6;
+    color: rgb(191, 200, 214);
+    border: none;
+}
+
+
+.tab-active {
+    background: #ec4899;
+}
+
+
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
