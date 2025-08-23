@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ethereumwalletgenerator.com Генератор Ethereum-кошельков</title>
     
-  <script type="module" crossorigin src="./assets/index-1d6a9626.js"></script>
-  <link rel="stylesheet" href="./assets/index-07091a16.css">
+  <script type="module" crossorigin src="./assets/index-16de4147.js"></script>
+  <link rel="stylesheet" href="./assets/index-f35636a5.css">
 </head>
 <body class="page">
     <header class="header page__header">
         <div class="wrapper header__wrapper">
-            <div class="header__logo">Ethereum Wallet Generator</div>
+            <div class="header__logo">ethereumwalletgenerator.com</div>
             <a class="header__link" href="https://github.com/VladislavBobyrev/ethereumwalletgenerator.com" target="_blank">GitHub</a>
         </div>
     </header>
 
     <main class="main wrapper page__main">
+       <section>
+        <h2>Выберете сеть</h2>
+         <div id="tabs" class="tabs-group"></div>
+       </section>
+       <section>
+        <h2>Введите фразу для генерации кошелькаов</h2>
         <form id="myForm" class="password-form">
             <input class="password-form__input" type="password" id="password" placeholder="Введите пароль"  autofocus>
             <button class="password-form__btn" id="generate">Создать кошельки</button>
         </form>
+       </section>
         <div class="main__table">
             <table class="table" id="walletsTable">
                 <thead class="table__thead">
