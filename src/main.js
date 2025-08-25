@@ -1,11 +1,6 @@
-import {
-    generateXChainWallets,
-    generatePChainWallets,
-    generateCChainWallets,
-} from './avax-generate.js';
 import { generateTRXWallets } from './trx-generate.js';
 import { generateXRPWallets } from './xrp-generate.js';
-import { generateIOTAWallets } from './iota-generate.js';
+import { generateIOTAEVMWallets as generateIOTAWallets } from './iota-generate.js';
 import { generateWallets } from './utils.js';
 
 import './styles.css';
@@ -26,21 +21,7 @@ const Tabs = [
         name: 'XRP',
         funcGenerate: generateXRPWallets
     },
-    {
-        id: 114,
-        name: 'AVAX C-Chain',
-        funcGenerate: generateCChainWallets
-    },
-    {
-        id: 115,
-        name: 'AVAX P-Chain',
-        funcGenerate: generatePChainWallets
-    },
-    {
-        id: 116,
-        name: 'AVAX X-Chain',
-        funcGenerate: generateXChainWallets
-    },
+
     {
         id: 117,
         name: 'IOTA EVM',
