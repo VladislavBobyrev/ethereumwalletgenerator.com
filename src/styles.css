@@ -185,14 +185,18 @@ body {
 .tab-button {
     width: 100%;
     padding: 0.31rem;
-    background: #3b82f6;
+    background: #000000;
     color: rgb(191, 200, 214);
     border: none;
 }
 
+.tab-button:hover {
+    background: #3b83f6bc;
 
-.tab-active {
-    background: #ec4899;
+}
+
+.tab-active , .tab-active:hover{
+    background: #ec489acb;
 }
 
 
