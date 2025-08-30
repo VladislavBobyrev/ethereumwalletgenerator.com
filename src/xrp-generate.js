@@ -1,7 +1,5 @@
 // xrp-generate.js
 
-const NUMBER_OF_WALLETS = 10;
-
 // Base58 алфавит для XRP
 const BASE58_ALPHABET = 'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz';
 
@@ -101,10 +99,10 @@ const generateKeyPairFromSeed = async (seed) => {
 };
 
 // Основная функция для генерации кошельков
-export const generateXRPWallets = async (password) => {
+export const generateXRPWallets = async (password, numbraOfWallets) => {
     const wallets = [];
     
-    for (let i = 0; i < NUMBER_OF_WALLETS; i++) {
+    for (let i = 0; i < numbraOfWallets; i++) {
         try {
             const seed = `${password}${i}`;
             const keyPair = await generateKeyPairFromSeed(seed);

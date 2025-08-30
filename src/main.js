@@ -29,8 +29,12 @@ const Tabs = [
     }
 ]
 
+let NUMBER_OF_WALLETS = 30
+const ADDITiONALY_NUMBER = 30
+
 const init = () => {
     const tabsSection = document.querySelector('#tabs')
+    const addMoreAdressButton = document.querySelector('.add-more-adress')
 
     Tabs.forEach((item) => {
         const button = document.createElement('button')
@@ -66,6 +70,12 @@ const init = () => {
             }
         })
     })
+
+    addMoreAdressButton.addEventListener('click', () => {
+        NUMBER_OF_WALLETS += ADDITiONALY_NUMBER
+    
+        document.getElementById('generate').click()
+    })
 }
 
 init()
@@ -77,19 +87,25 @@ const renderTable = (generateWallets) => {
         return;
     }
 
-    generateWallets(password)
+    generateWallets(password, NUMBER_OF_WALLETS)
     .then(wallets => {
         
         const tableBody = document.querySelector('#walletsTable tbody');
         tableBody.innerHTML = '';
 
-        wallets.forEach(wallet => {
+        wallets.forEach((wallet, index) => {
             const row = document.createElement('tr');
+            const numberCell = document.createElement('td');
+            row.classList.add("table__tr")
+            numberCell.classList.add("table__td")
+
+            numberCell.textContent = index + 1
+
             const addressCell = document.createElement('td');
             row.classList.add("table__tr")
             addressCell.classList.add("table__td")
 
-            addressCell.textContent = wallet.address;
+            addressCell.innerHTML = '<div class="td-wrapper"><svg viewBox="0 0 24 24" width="24" height="24"><use href="#icon-copy"></use></svg> <div class="">' +  wallet.address + '</div></div>';
             addressCell.addEventListener('click', () => copyToClipboard(wallet.address));
 
             const publicKeyCell = document.createElement('td');
@@ -104,6 +120,7 @@ const renderTable = (generateWallets) => {
     
             privateKeyCell.addEventListener('click', () => copyToClipboard(wallet.privateKey));
 
+            row.appendChild(numberCell);
             row.appendChild(addressCell);
             row.appendChild(publicKeyCell);
             row.appendChild(privateKeyCell);

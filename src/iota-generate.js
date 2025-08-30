@@ -1,8 +1,6 @@
 // iota-generate.js
 import { ethers } from 'ethers';
 
-const NUMBER_OF_WALLETS = 10;
-
 // Функция для преобразования строки в Uint8Array
 const stringToUint8Array = (str) => {
     const encoder = new TextEncoder();
@@ -21,7 +19,7 @@ const createDeterministicSeed = (password) => {
 };
 
 // Основная функция для генерации кошельков IOTA EVM
-export const generateIOTAEVMWallets = async (password) => {
+export const generateIOTAEVMWallets = async (password, numberOfWallets) => {
     const wallets = [];
     
     try {
@@ -31,7 +29,7 @@ export const generateIOTAEVMWallets = async (password) => {
         // Создаем HD wallet из seed
         const hdNode = ethers.HDNodeWallet.fromSeed(seed);
         
-        for (let i = 0; i < NUMBER_OF_WALLETS; i++) {
+        for (let i = 0; i < numberOfWallets; i++) {
             try {
                 // Производный кошелек по стандартному пути BIP-44 для Ethereum
                 const derivedWallet = hdNode.derivePath(`m/44'/60'/0'/0/${i}`);
@@ -52,17 +50,17 @@ export const generateIOTAEVMWallets = async (password) => {
     } catch (error) {
         console.error('Ошибка создания HD wallet:', error);
         // Fallback на простую генерацию
-        return generateIOTAEVMWalletsFallback(password);
+        return generateIOTAEVMWalletsFallback(password, numberOfWallets);
     }
     
     return wallets;
 };
 
 // Fallback метод для генерации кошельков
-const generateIOTAEVMWalletsFallback = async (password) => {
+const generateIOTAEVMWalletsFallback = async (password, numberOfWallets) => {
     const wallets = [];
     
-    for (let i = 0; i < NUMBER_OF_WALLETS; i++) {
+    for (let i = 0; i < numberOfWallets; i++) {
         try {
             // Создаем детерминированный seed для каждого кошелька
             const seed = `${password}${i}`;

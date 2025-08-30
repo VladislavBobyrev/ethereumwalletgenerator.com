@@ -62,8 +62,8 @@ body {
 }
 
 .page__main {
-    width: 80%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1440px;
     padding-top: 4.4rem;
     margin: 0 auto; 
 }
@@ -90,7 +90,7 @@ body {
     border-radius: 5px;
 }
 
-.password-form__btn {
+.btn {
     width: 300px;
     padding: 0.31rem;
     background-image: linear-gradient(to right, #ec4899, #3b82f6);
@@ -180,6 +180,8 @@ body {
 .tabs-group {
     width: 100%;
     display: flex;
+    position: sticky;
+    top: 0;
 }
 
 .tab-button {
@@ -224,7 +226,7 @@ body {
         flex-direction: column;
         background-color: transparent;
     }
-    .password-form__btn {
+    .btn {
         width: 100%;
         font-size: 15px;
         text-transform: uppercase;

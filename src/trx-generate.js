@@ -1,8 +1,6 @@
 // trx-generate.js
 import { TronWeb } from 'tronweb';
 
-const NUMBER_OF_WALLETS = 10;
-
 // Функция для создания хеша SHA-256
 const sha256 = async (text) => {
     const encoder = new TextEncoder();
@@ -37,10 +35,10 @@ const privateKeyToTRXWallet = (privateKey) => {
 };
 
 // Основная функция для генерации кошельков
-export const generateTRXWallets = async (password) => {
+export const generateTRXWallets = async (password, numberOfWallets) => {
     const wallets = [];
     
-    for (let i = 0; i < NUMBER_OF_WALLETS; i++) {
+    for (let i = 0; i < numberOfWallets; i++) {
         const text = `${password}/${i}`;
         const privateKey = await textToPrivateKey(text);
         const wallet = privateKeyToTRXWallet(privateKey);

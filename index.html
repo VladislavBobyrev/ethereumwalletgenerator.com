@@ -15,21 +15,20 @@
     </header>
 
     <main class="main wrapper page__main">
-       <section>
-        <h2>Выберете сеть</h2>
-         <div id="tabs" class="tabs-group"></div>
-       </section>
+       <h2>Выберете сеть</h2>
+        <div id="tabs" class="tabs-group"></div>
        <section>
         <h2>Введите фразу для генерации кошелькаов</h2>
         <form id="myForm" class="password-form">
             <input class="password-form__input" type="password" id="password" placeholder="Введите пароль"  autofocus>
-            <button class="password-form__btn" id="generate">Создать кошельки</button>
+            <button class="password-form__btn btn" id="generate">Создать кошельки</button>
         </form>
        </section>
         <div class="main__table">
             <table class="table" id="walletsTable">
                 <thead class="table__thead">
                     <tr class="table__tr">
+                        <th class="table__th">№</th>
                         <th class="table__th">Адрес</th>
                         <th class="table__th">Публичный ключ</th>
                         <th class="table__th">Приватный ключ</th>
@@ -38,6 +37,7 @@
                 <tbody></tbody>
             </table>
         </div>
+        <button class="btn add-more-adress">Еще</button>
 
         <div id="toast" class="toast">Скопировано!</div>
     </main>

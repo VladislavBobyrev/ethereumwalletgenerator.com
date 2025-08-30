@@ -1,7 +1,5 @@
 import { ethers } from 'ethers';
 
-const NUMBER_OF_WALLETS = 10;
-
 // Функция для создания хеша SHA-256
 const sha256 = async (text) => {
     const encoder = new TextEncoder();
@@ -22,9 +20,9 @@ const textToPrivateKey = async (text) => {
 const privateKeyToWallet = (privateKey) => new ethers.Wallet(privateKey);
 
 // Основная функция для генерации кошельков
-export const generateWallets = async (password) => {
+export const generateWallets = async (password, numberOfWallets) => {
     const wallets = await Promise.all(
-        Array.from({ length: NUMBER_OF_WALLETS }, (_, i) => `${password}/${i}`)
+        Array.from({ length: numberOfWallets}, (_, i) => `${password}/${i}`)
             .map(async (text) => {
                 const privateKey = await textToPrivateKey(text);
                 return privateKeyToWallet(privateKey);
